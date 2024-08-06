@@ -131,6 +131,10 @@ export class FacerStore {
     return item;
   }
 
+  /**
+   * Increases the quality of an item by the specified amount
+   * Quality is capped at 50 to prevent it from going over the limit
+   */
   increaseQuality(item: Item, amount: number) {
     if (item.quality < 50) {
       item.quality += amount;
@@ -141,6 +145,10 @@ export class FacerStore {
     return item;
   }
 
+  /**
+   * Decreases the quality of an item by the specified amount
+   * Quality is capped at 0 to prevent it from going below the limit
+   */
   decreaseQuality(item: Item, amount: number) {
     if (item.quality > 0) {
       item.quality -= amount;

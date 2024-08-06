@@ -10,6 +10,16 @@ export class Item {
   }
 }
 
+export class FragileItem extends Item {
+  fragile: boolean;
+
+  constructor(name, sellIn, quality, fragile = false) {
+    super(name, sellIn, quality);
+    this.fragile = fragile;
+  }
+}
+
+
 export class FacerStore {
   items: Array<Item>;
 

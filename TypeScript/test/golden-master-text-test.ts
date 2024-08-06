@@ -1,4 +1,4 @@
-import { Item, FacerStore } from '../app/facer-store';
+import { Item, FacerStore, FragileItem } from '../app/facer-store';
 
 const items = [
   new Item("Seiko Watch", 10, 20), //
@@ -10,7 +10,7 @@ const items = [
   new Item("Passes to Watchface Conference", 10, 49),
   new Item("Passes to Watchface Conference", 5, 49),
   // this fragile item does not work properly yet
-  new Item("Fragile Watch", 3, 6)];
+  new FragileItem("Fragile Watch", 3, 6, true)];
 
 
 const facerStore = new FacerStore(items);

@@ -61,11 +61,9 @@ export class FacerStore {
     }
     item.sellIn -= 1;
     if (item.sellIn < 0) {
-      if (item.quality > 0) {
-        // Quality decreases twice as fast after sellIn date
-        // We decrease quality by 1 again to make it a total of 2
-        item = this.decreaseQuality(item, 1);
-      }
+      // Quality decreases twice as fast after sellIn date
+      // We decrease quality by 1 again to make it a total of 2
+      item = this.decreaseQuality(item, 1);
     }
     return item;
   }
@@ -80,9 +78,7 @@ export class FacerStore {
       }
       item.sellIn -= 1;
       if (item.sellIn < 0) {
-        if (item.quality > 0) {
-          item = this.decreaseQuality(item, 2) as FragileItem;
-        }
+        item = this.decreaseQuality(item, 2) as FragileItem;
       }
     } else {
       throw new Error('Invalid item type');
